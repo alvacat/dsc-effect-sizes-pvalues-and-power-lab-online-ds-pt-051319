@@ -22,9 +22,10 @@ def welch_df(a, b):
     s2 = b.var(ddof=1)
     n1 = a.size
     n2 = b.size
+
     
     numerator = (s1/n1 + s2/n2)**2
-    denominator = (s1/ n1)**2/(n1 - 1) + (s2/ n2)**2/(n2 - 1)
+    denominator = (s1/ n1)**2/((n1 - 1)*n1**2) + (s2/ n2)**2/((n2 - 1)*n2**2)
     
     return numerator/denominator
 
